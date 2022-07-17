@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
+// import { GrClose } from 'react-icons/gr';
 import { Overlay, ModalStyled } from './Modal.styled';
 
 const modalRoot = document.querySelector('#modal-root');
@@ -20,14 +21,14 @@ class Modal extends Component {
     window.removeEventListener('keydown', this.handleKeyDown);
   }
 
-  handleKeyDown = event => {
-    if (event.code === 'Escape') {
+  handleKeyDown = e => {
+    if (e.code === 'Escape') {
       this.props.onClose();
     }
   };
 
-  handleBackdropClick = event => {
-    if (event.currentTarget === event.target) {
+  handleBackdropClick = e => {
+    if (e.currentTarget === e.target) {
       this.props.onClose();
     }
   };
@@ -36,6 +37,9 @@ class Modal extends Component {
     return createPortal(
       <Overlay onClick={this.handleBackdropClick}>
         <ModalStyled>{this.props.children}</ModalStyled>
+        {/* <button type="button" onClick={this.props.onClose}>
+          <GrClose style={{ width: 30, height: 30 }} />
+        </button> */}
       </Overlay>,
       modalRoot
     );
