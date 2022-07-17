@@ -52,7 +52,7 @@ class SearchBar extends Component {
             value={query}
             onChange={this.handleChange}
             autocomplete="off"
-            autofocus
+            autoFocus
             placeholder="Search images and photos"
           />
         </SearchForm>
