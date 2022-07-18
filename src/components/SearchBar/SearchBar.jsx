@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
-import { MdImageSearch } from 'react-icons/md';
+import { MdOutlineImageSearch } from 'react-icons/md';
 import {
   SearchHeader,
   SearchForm,
@@ -43,7 +43,7 @@ class SearchBar extends Component {
       <SearchHeader>
         <SearchForm onSubmit={this.handleSubmit}>
           <SearchButton type="submit">
-            <MdImageSearch style={{ width: 30, height: 30 }} />
+            <MdOutlineImageSearch style={{ width: 30, height: 30 }} />
           </SearchButton>
 
           <SearchFormInput
